@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% block content %}
+<div style="border: 1px solid black;">
+    <div>Name: {{ name }}</div>
+    <div>Job: {{ job }}</div>
+    <div>Age: {{ age }}</div>
+    <div>Appearence: {{ appearence }}</div>
+    <div style="text-decoration: underline;">Skills</div>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <img src="{{ MEDIA_URL }}Flare.jpg" alt="">
+</div>
+<br>
+<a href="{% url 'blog.about' %}">Go to About Page</a>
+<a href="{% url 'blog.register' %}">Create an account</a>
+{% endblock %}

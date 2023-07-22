@@ -1,0 +1,14 @@
+Scripts/
+
+__pycache__/
+    *.pyc
+
+Include/
+
+Lib/
+
+dbconfig.cnf
+
+DjangoBlog
+
+pyvenv.cfg
