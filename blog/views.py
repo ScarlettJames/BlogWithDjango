@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import Registeration
-from .models import User
+from django.contrib.auth.models import User
 
 # Create your views here.
 def HomeView(request):
@@ -19,12 +19,6 @@ def AboutView(request):
 
 def RegisterView(request):
     form = Registeration(request.POST)
-    # if request.method == 'POST':
-    #     username = request.POST.get('username')
-    #     password = request.POST["password"]
-    #     print(username, password)
-    #     return render(request, 'register.html', {"form": form})
-    # return render(request, 'register.html', {"form": form})
     if form.is_valid():
         cleaned_form = form.clean()
         User.objects.create(**cleaned_form)
