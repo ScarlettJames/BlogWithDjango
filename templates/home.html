@@ -16,6 +16,7 @@
     <img src="{{ MEDIA_URL }}Flare.jpg" alt="">
 </div>
 <br>
-<a href="{% url 'blog.about' %}">Go to About Page</a>
-<a href="{% url 'blog.register' %}">Create an account</a>
+<a class="btn btn-primary" href="{% url 'blog.about' %}">Go to About Page</a>
+<a class="btn btn-primary" href="{% url 'blog.register' %}">Create an account</a>
+<a class="btn btn-primary" href="{% url 'blog.login' %}">Login Account</a>
 {% endblock %}
