@@ -12,3 +12,5 @@ dbconfig.cnf
 DjangoBlog
 
 pyvenv.cfg
+
+migrations/
