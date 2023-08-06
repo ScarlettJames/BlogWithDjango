@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect
 from .forms import Registeration, Login
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 def RegisterView(request):
     form = Registeration(request.POST) if request.method == "POST" else Registeration()
     if form.is_valid():
         cleaned_form = form.clean()
+        cleaned_form['password'] = make_password(cleaned_form['password'])
         User.objects.create(**cleaned_form)
         return render(request, 'home.html')
     return render(request, 'register.html', {"form": form})
