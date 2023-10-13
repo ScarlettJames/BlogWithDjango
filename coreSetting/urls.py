@@ -21,4 +21,5 @@ urlpatterns = [
     path('superuser/', admin.site.urls),
     path('', include('blog.urls'), name='blogApp'),
     path('account/', include('user.urls'), name='blogUser'),
+    path('todolist/',include('ToDoList.urls'),name='todolist')
 ]
